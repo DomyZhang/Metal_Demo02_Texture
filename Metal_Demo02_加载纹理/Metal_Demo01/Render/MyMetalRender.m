@@ -169,7 +169,7 @@ typedef struct {
     CGContextTranslateCTM(sprContext, rect.origin.x, rect.origin.y);
     CGContextTranslateCTM(sprContext, 0, rect.size.height);
     CGContextScaleCTM(sprContext, 1.0, -1.0);
-    CGContextScaleCTM(sprContext, -rect.origin.x, -rect.origin.y);
+    CGContextTranslateCTM(sprContext, -rect.origin.x, -rect.origin.y);
     CGContextDrawImage(sprContext, rect, sprImage);
     
     // 绘制完成 释放
